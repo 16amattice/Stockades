@@ -1,5 +1,6 @@
 import sys, time, random
 import winsound
+from pygame import mixer
 
 ###### THE STOCKADES ######
 ################################################################################
@@ -12,6 +13,12 @@ def print_s(str):
     for letter in str:
         sys.stdout.write(letter)
         time.sleep(.01)
+    print ""
+
+def print_d(str):
+    for letter in str:
+        sys.stdout.write(letter)
+        time.sleep(.02)
     print ""
 
 def death():
@@ -75,9 +82,11 @@ def stats():
         print "------------------------------------------------\n"
 
 def music():
-    for i in range(2):
-        winsound.PlaySound("mus.wav", winsound.SND_ASYNC | winsound.SND_ALIAS )
-        #make sure you have mus.wav file in the same folder as .py    # REMEMBER TO EDIT MUSIC FOR LENGTH
+    mixer.init()
+    mixer.music.load('mus.mp3')
+    mixer.music.play(-1, 0.0)
+    while mixer.music.get_busy() == False:
+            continue
 
 def start_vars():
     #include this function in the first room
@@ -266,30 +275,38 @@ def start():
     music()
     start_vars()
     print "Loading..."
-    print_s("\n#################################################################")
+    print_s("\n################################################################")
     print "-type \'stats\' anytime to see your items and health"
     print "-picking up items will increase your combat efficiency"
     print "-do not use capital letters for commands"
     print "-do not press ENTER unless prompted (you will take damage)"
-    print_s("#################################################################")
-    time.sleep(4)
+    print_s("################################################################")
+    time.sleep(3)
     print "\n"
-    print "\n~~~You enter the gate and you see the wizard sitting down at a desk smoking his pipe."
-    print "He says: Ah. Another brave soldier coming to aid. Welcome to the Stockades."
-    print "This prison acts as a reformatory for the unruly denizens of our city and many...other beings."
-    print "However, every 5 years we organise a purge to cleanse our holdings from those who failed to be...erhm...reformed."
-    print "During the purge period, we invite heroes and champions from across our realm to climb down in the prison and slay everything in there."
-    print "I hope you realise that the amount of gold we'll pay you is also based on the very high risk that you will die."
-    print "All you have to do in order to get started is take a seat and sign this contract here.\n....."
-    print "You sit down and the wizard hands you a piece of paper. You can't understand any of the terms as the writing is indesciphrable. You see a field underneath everything saying:"
+    print_s("\n~~~You enter the gate and you see the wizard sitting down at a \ndesk smoking his pipe. He says:")
+    time.sleep(1)
+    print_d("Ah. Another brave soldier coming to aid. Welcome to the Stockades.")
+    time.sleep(1)
+    print_d("This prison acts as a reformatory for the unruly denizens of our \ncity and many...other beings.")
+    time.sleep(1)
+    print_d("However, every 5 years we organise a purge to cleanse our holdings \nfrom those who failed to be...erhm...reformed.")
+    time.sleep(1)
+    print_d("During the purge period, we invite heroes and champions from across \nour realm to climb down in the prison and slay everything in there.")
+    time.sleep(1)
+    print_d("I hope you realise that the amount of gold we'll pay you is also \nbased on the very high risk that you will die.")
+    time.sleep(1)
+    print_d("All you have to do in order to get started is take a seat and sign \nthis contract here.\n.....")
+    time.sleep(1)
+    print_d("You sit down and the wizard hands you a piece of paper. You can't \nunderstand any of the terms as the writing is indesciphrable. You \nsee a field underneath everything saying:")
+    time.sleep(1)
     name = raw_input("\nSign with your name here: ") # name tre sa fie global
 
-    print_s("\n\"Very well, %s\"" % name)
-    print_s("The wizard then stands up and pulls a lever, a trap door opens under you and you fall into a dark pit along with the chair you were sitting on.")
+    print_d("\n\"Very well, %s\"" % name)
+    print_d("The wizard then stands up and pulls a lever, a trap door opens under \nyou and you fall into a dark pit along with the chair you were sitting on.")
     print_s("....")
     time.sleep(2)
-    print_s("You hit the floor hard and the chair turns to splinters under you.")
-    print_s("You stand up, aching from the fall, and shake your head trying to regain your wit.")
+    print_d("You hit the floor hard and the chair turns to splinters under you.")
+    print_d("You stand up, aching from the fall, and shake your head trying to \nregain your wit.")
     torch_room()
 
 def torch_room():
@@ -299,7 +316,7 @@ def torch_room():
     while True:
 
         if not torch: #daca n-ai torta
-            print_s("\n~~~You are now in a dark room with walls of rough stone. One of the walls is lit by a torch. You cannot see very well and could use some light. What do you do?")
+            print_d("\n~~~You are now in a dark room with walls of rough stone. One of \nthe walls is lit by a torch. You cannot see very well and could \nuse some light. What do you do?")
 
             while True:
 
@@ -323,7 +340,7 @@ def torch_room():
                 continue #tine minte asta - continue te scoate din cel mai apropiat loop
 
         else: #daca ai torta
-            print_s("\n~~~Aside from two cell doors on the left and right and one wooden door in the middle to the north, this room is empty. The floor is muddy and scattered with splinters from the broken chair. You can hear faint screams through the walls.")
+            print_d("\n~~~Aside from two cell doors on the left and right and one wooden \ndoor in the middle to the north, this room is empty. The floor is \nmuddy and scattered with splinters from the broken chair. \nYou can hear faint screams through the walls.")
             print_s("Which door do you take?")
 
             while True:
@@ -335,11 +352,11 @@ def torch_room():
                     continue
 
                 if "left" in action or "right" in action or "cell" in action:
-                    print_s("You approach one of the cell doors slowly. The door is locked. You can make out the shape of a few skulls inside. Nothing of interest here.")
+                    print_d("You approach one of the cell doors slowly. The door is locked. \nYou can make out the shape of a few skulls inside. Nothing of interest here.")
                     continue
 
                 elif "middle" in action or "center" in action or "wooden" in action or "north" in action:
-                    print_s("The door creaks open. You step into the next chamber.")
+                    print_d("The door creaks open. You step into the next chamber.")
                     goblin1_room()
 
                 else:
