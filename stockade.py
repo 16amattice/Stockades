@@ -1,5 +1,6 @@
 import sys, time, random
 import winsound
+from pygame import mixer
 
 ###### THE STOCKADES ######
 ################################################################################
@@ -81,9 +82,11 @@ def stats():
         print "------------------------------------------------\n"
 
 def music():
-    for i in range(2):
-        winsound.PlaySound("mus.wav", winsound.SND_ASYNC | winsound.SND_ALIAS )
-        #make sure you have mus.wav file in the same folder as .py    # REMEMBER TO EDIT MUSIC FOR LENGTH
+    mixer.init()
+    mixer.music.load('mus.mp3')
+    mixer.music.play(-1, 0.0)
+    while mixer.music.get_busy() == False:
+            continue
 
 def start_vars():
     #include this function in the first room
