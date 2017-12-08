@@ -1,5 +1,4 @@
 import sys, time, random
-import winsound
 from pygame import mixer
 
 ###### THE STOCKADES ######
@@ -47,7 +46,9 @@ def death():
           '-_`-,       ` `   ./`
              `-(_            )
                  ^^\..___,.--` """
-    winsound.PlaySound('death.wav', winsound.SND_FILENAME)
+    mixer.init()
+    mixer.music.load('death.wav')
+    mixer.music.play(0, 0.0)
     print_s("\n              ##### YOU DIED #####")
     raw_input("                   Press Enter to play again.\n")
     #always include Start function here#
