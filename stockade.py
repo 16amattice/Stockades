@@ -49,7 +49,7 @@ def death():
     mixer.init()
     mixer.music.load('death.wav')
     mixer.music.play(0, 0.0)
-    print_s("\n              ##### YOU DIED #####")
+    print_d("\n              ##### YOU DIED #####")
     raw_input("                   Press Enter to play again.\n")
     #always include Start function here#
     #make sure loop is correct and resets vars
@@ -169,7 +169,7 @@ def potion_drink():
     global potion
     global hp
 
-    print_s("You search your bag.")
+    print_d("You search your bag.")
     time.sleep(1)
 
     if potion:
@@ -182,41 +182,41 @@ def potion_drink():
 
 def greasy_spider():
 
-    print_s("A greasy spider crawls out of a hole. It skitters towards you and bites your leg. You start stabbing it desperately.")
-    print_s("The fight is shorter than you thought it would be.")
+    print_d("A greasy spider crawls out of a hole. It skitters towards you and bites your leg. \nYou start stabbing it desperately.")
+    print_d("The fight is shorter than you thought it would be.")
     print_s(". . .")
     time.sleep(3)
     damage(18)
     print "\nYou kill the spider.\n"
     time.sleep(1)
-    print_s("The spider is dead on the floor. His body is in pieces and oozing yellow grease. Eww. There is a door at the north and one at the south, where you first came in. What do you do?")
+    print_d("The spider is dead on the floor. His body is in pieces and oozing yellow grease. \nEww. There is a door at the north and one at the south, where you first came in. \nWhat do you do?")
 
 def ogre():
 
-    print_s("An ogre comes charging through the door as you step in. The ogre is angry. He jumps at you and you start fighting.")
-    print_s("The fight takes a few minutes. Your slim body aids you in jumping all over the room dodging the ogre's charges. He still manages to hit you.")
+    print_d("An ogre comes charging through the door as you step in. The ogre is angry. \nHe jumps at you and you start fighting.")
+    print_d("The fight takes a few minutes. Your slim body aids you in jumping all over the room dodging the ogre's charges. \nHe still manages to hit you.")
     print_s(". . .")
     time.sleep(3)
     damage(28)
     print "\nYou kill the ogre.\n"
     time.sleep(1)
-    print_s("The ogre is dead on the floor. He was naked and fat. No items on him. There is a door at the north and one at the south, where you first came in. What do you do?")
+    print_d("The ogre is dead on the floor. He was naked and fat. No items on him. \nThere is a door at the north and one at the south, where you first came in. \nWhat do you do?")
 
 def rogue():
 
-    print_s("Suddenly a stealthy rogue appears from the shadows. He is here, just as you are, to claim the gold reward. He thinks you are one of the stockades prisoners and attacks you.")
-    print_s("You catch the rogue in mid-air and you cut his throat. He still managed to stab you though.")
+    print_d("Suddenly a stealthy rogue appears from the shadows. He is here, just as you are, to claim the gold reward. \nHe thinks you are one of the stockades prisoners and attacks you.")
+    print_d("You catch the rogue in mid-air and you cut his throat. He still managed to stab you though.")
     print_s(". . .")
     time.sleep(3)
     damage(23)
     print "\nYou kill the rogue.\n"
     time.sleep(1)
-    print_s("The rogue is dead on the floor. No interesting loot on his body. There is a door at the north and one at the south, where you first came in. What do you do?")
+    print_d("The rogue is dead on the floor. No interesting loot on his body. \nThere is a door at the north and one at the south, where you first came in. \nWhat do you do?")
 
 def clear_room():
     time.sleep(1)
-    print_s("It was probably just the wind...")
-    print_s("The room is empty. There is a door at the north and one at the south, where you first came in. What do you do?")
+    print_d("It was probably just the wind...")
+    print_d("The room is empty. There is a door at the north and one at the south, where you first came in. \nWhat do you do?")
 
 def randenc():
 
@@ -231,8 +231,8 @@ def puzzle():
 
     global goldenkey
 
-    print_s("You approach the small iron box and take it in your hands. It says on it \"Open the box for the golden key\". The box has two wheels to turn for you to enter a number.")
-    print_s("The imprint on the box is a grid of numbers:")
+    print_d("You approach the small iron box and take it in your hands. It says on it \"Open the box for the golden key\". \nThe box has two wheels to turn for you to enter a number.")
+    print_d("The imprint on the box is a grid of numbers:")
     print "\n--------------"
     print "| 1 + 4 = 12  |"
     print "| 2 + 9 = 24  |"
@@ -250,13 +250,13 @@ def puzzle():
             continue
 
         if action == "60":
-            print_s("The box shatters to pieces instantly and a beautiful golden key drops on the floor. You bend and pick it up.")
+            print_d("The box shatters to pieces instantly and a beautiful golden key drops on the floor. \nYou bend and pick it up.")
             goldenkey = True
-            print_s("\nYou now have the golden key!\n")
+            print_d("\nYou now have the golden key!\n")
             keyroom()
 
         elif action == "leave":
-            print_s("You give up and put the box down. Maybe another time?")
+            print_d("You give up and put the box down. Maybe another time?")
             keyroom()
 
         else:
@@ -369,11 +369,11 @@ def goblin1_room():
     global knife
 
     if goblin1: # DACA E VIU GOBLINU
-        print_s("\n~~~You pace slowly as you start to make out the shape of a goblin munching on a piece of mutton in the corner of the room. You can see a door right in front of you.")
-        print_s("You are afraid to approach the door with the goblin in the room.")
-        print_s("To your immediate left there is a wooden table stained with dried wine. On the table you see a dim candle, an empty piece of parchment and a knife.")
-        print_s("The goblin sees you.")
-        print_s("What do you do?")
+        print_d("\n~~~You pace slowly as you start to make out the shape of a \ngoblin munching on a piece of mutton in the corner of the room. \nYou can see a door right in front of you.")
+        print_d("You are afraid to approach the door with the goblin in the room.")
+        print_d("To your immediate left there is a wooden table stained with dried \nwine. On the table you see a dim candle, an empty piece of parchment and a knife.")
+        print_d("The goblin sees you.")
+        print_d("What do you do?")
 
         while True:
 
@@ -387,11 +387,11 @@ def goblin1_room():
 
             if "knife" in action and not knife:
                 knife = True
-                print_s("You quickly grab the knife from the table. The goblin starts growling and shrieking. What do you do?")
+                print_s("You quickly grab the knife from the table. \nThe goblin starts growling and shrieking. \nWhat do you do?")
                 continue
 
             if "knife" in action and knife:
-                print_s("You already have the knife. The goblin prepares to attack you. What do you do?")
+                print_s("You already have the knife. The goblin prepares to attack you. \nWhat do you do?")
                 continue
 
             if "kill" in action or "attack" in action or "fight" in action:
@@ -404,16 +404,16 @@ def goblin1_room():
                 goblin1_room()
 
             else:
-                print_s("The goblin notices you are distracted and slashes you with his claws. What do you do?!")
+                print_s("The goblin notices you are distracted and slashes you with his claws. \nWhat do you do?!")
                 damage(11)
 
 
     if not goblin1: # DACA E MORT GOBLINU
 
         if not knife:
-            print_s("\n~~~A knife is on the table. The room is now quiet with the goblin's carcass still warm on the floor.")
-            print_s("There are doors at the north and south of the room. The northern door appears to be of heavy steel and is slightly ajar.")
-            print_s("What do you do?")
+            print_d("\n~~~A knife is on the table. The room is now quiet with the \ngoblin's carcass still warm on the floor.")
+            print_d("There are doors at the north and south of the room. The northern door \nappears to be of heavy steel and is slightly ajar.")
+            print_d("What do you do?")
 
             while True:
 
@@ -444,9 +444,9 @@ def goblin1_room():
                     print "Invalid. Try again."
 
         elif knife:
-            print_s("\n~~~The room is now quiet with the goblin's carcass still warm on the floor.")
-            print_s("There are doors at the north and south of the room. The northern door appears to be of heavy steel and is slightly ajar.")
-            print_s("What do you do?")
+            print_d("\n~~~The room is now quiet with the goblin's carcass still warm on the floor.")
+            print_d("There are doors at the north and south of the room. \nThe northern door appears to be of heavy steel and is slightly ajar.")
+            print_d("What do you do?")
 
             while True:
 
@@ -472,27 +472,9 @@ def goblin1_room():
 
 
 
-
-
-
-        #poti lua cutitu daca NU e luat
-        #daca e luat - atunci e gol
-
-    #daca goblinu e viu
-
-        # poti lua cutitu SAU/SI poti omora goblinu
-            # daca ai cutitu iei dmg mai mic
-            # daca n-ai cutitu iei dmg mai mare
-
-    # daca goblinu e mort
-        #poti lua cutitu daca nu e luat
-        #daca e luat - empty room
-
-    # te poti intoarce si inapoi in torch_room
-
 def prophecy_room():
 
-    print_s("\n~~~This room is larger than the others. You see wooden doors with steel bars to the north, south, west and east. You also see a large readable plaque on the floor. The eastern door has a silver lock on it. The western door has \"TREASURE\" written on it with blood. \nWhat do you do?")
+    print_d("\n~~~This room is larger than the others. \nYou see wooden doors with steel bars to the north, south, west and east. \nYou also see a large readable plaque on the floor. \nThe eastern door has a silver lock on it. The western door has \"TREASURE\" written \non it with blood. \nWhat do you do?")
 
     while True:
 
@@ -507,64 +489,55 @@ def prophecy_room():
             continue
 
         if "inscription" in action or "read" in action or "plaque" in action:
-            print_s("You kneel and get a closer look. The inscription reads in capital letters:")
+            print_d("You kneel and get a closer look. The inscription reads in capital letters:")
             print_s("*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*")
-            print_s(""" BEWARE FOOLS, FOR ON THE 501st PURGE OF THE STOCKADES, \nTHE WRATH OF THE SOULS TORTURED HERE SHALL COALESCE INTO UNSPEAKABLE HORRORS. \nMANY WILL TRY, MANY WILL FAIL. ONLY THOSE ACQUAINTED BY FIRE AND ICE SHALL PREVAIL. """)
+            print_d(""" BEWARE FOOLS, FOR ON THE 501st PURGE OF THE STOCKADES, \nTHE WRATH OF THE SOULS TORTURED HERE SHALL COALESCE INTO UNSPEAKABLE HORRORS. \nMANY WILL TRY, MANY WILL FAIL. ONLY THOSE ACQUAINTED BY FIRE AND ICE SHALL PREVAIL. """)
             print_s("*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*")
             time.sleep(3)
-            print_s("\nYou stand back up. Chills run down your spine as you remember this actually is the 501st purge.\n")
+            print_d("\nYou stand back up. Chills run down your spine as you remember this actually is the 501st purge.\n")
             time.sleep(3)
-            print_s("You regain your courage. Which door do you try?")
+            print_d("You regain your courage. Which door do you try?")
             continue
 
         elif "north" in action or "northern" in action or "wooden" in action or "wooden" in action:
-            print_s("The northern door opens at the lightest touch. You step in the room.")
+            print_d("The northern door opens at the lightest touch. You step in the room.")
             hench1_room()
 
         elif "west" in action or "western" in action or "treasure" in action:
-            print_s("You push the door that says \"TREASURE\" and step in the room.")
+            print_d("You push the door that says \"TREASURE\" and step in the room.")
             goblin2_room()
 
         elif "east" in action or "eastern" in action or "lock" in action or "silver" in action:
 
             if silverkey and frost_ward:
-                print_s("Since you have been warded against frost, the door of this room has frozen into a block of ice. It is impossible to open.")
-                print_s("What do you do?")
+                print_d("Since you have been warded against frost, the door of this room \nhas frozen into a block of ice. It is impossible to open.")
+                print_d("What do you do?")
                 continue
 
             if not silverkey:
-                print_s("The door has a large silver lock. You need a key to open this door.")
+                print_d("The door has a large silver lock. You need a key to open this door.")
                 continue
 
             elif silverkey:
-                print_s("You pull the key out of your pouch and excitedly turn the lock open. The chains fall from the door but the lock magically remains in place. However, the door opens with a loud crack.")
+                print_d("You pull the key out of your pouch and excitedly turn the lock open. \nThe chains fall from the door but the lock magically remains in place. \nHowever, the door opens with a loud crack.")
                 time.sleep(1)
                 frost_ward_room()
 
 
         elif "south" in action or "southern" in action:
-            print_s ("You go back in the room where you killed the goblin.")
+            print_d("You go back in the room where you killed the goblin.")
             goblin1_room()
 
         else:
             print "Invalid. Try again."
-    #inscription
 
-    #NORTH HENCHMEN + KEY drop
-
-    #EAST YOU NEED key
-
-    #WEST YOU GET SWORD
-
-
-    #aici sunt 4 usi si 1 placa de citit
 
 def goblin2_room():
     global goblin2
     global sword
 
-    if goblin2: #DACA GOBLINU E IN VIATA
-        print_s("\n~~~This room is faintly lit by torches. There is a goblin here pacing back and forth. The goblin is no match for you, but this one is armed with a longsword. Behind the goblin you can see a treasure chest. You are pondering your odds. What do you do?")
+    if goblin2: 
+        print_d("\n~~~This room is faintly lit by torches. There is a goblin here pacing back and forth. \nThe goblin is no match for you, but this one is armed with a longsword. \nBehind the goblin you can see a treasure chest. You are pondering your odds. \nWhat do you do?")
 
         while True:
 
@@ -575,15 +548,15 @@ def goblin2_room():
                 continue
 
             elif "attack" in action or "kill" in action or "fight" in action or "stab" in action:
-                print_s("You charge head-on at the goblin. Punches and stabs. Slashes and screams.")
+                print_d("You charge head-on at the goblin. Punches and stabs. Slashes and screams.")
                 print_s(". . .")
                 time.sleep(2)
                 damage(13)
                 print_s("\nYou kill the goblin.")
                 goblin2 = False
                 time.sleep(1)
-                print_s("You approach the treasure chest...but sadly, notice it's only filled with cobweb.")
-                print_s("You mutter in anger but realise the goblin had a beautiful sword. You pick it up and sheathe it on your back.")
+                print_d("You approach the treasure chest...but sadly, notice it's only filled with cobweb.")
+                print_d("You mutter in anger but realise the goblin had a beautiful sword. You pick it up and sheathe it on your back.")
                 time.sleep(1)
                 print_s("\nYou now have a sword!\n")
                 time.sleep(1)
@@ -591,11 +564,11 @@ def goblin2_room():
                 goblin2_room()
 
             else:
-                print_s("The goblin takes advantage of having a superior weapon and attacks you. You did not riposte in time and got hurt. You cannot run. What do you do?!")
+                print_d("The goblin takes advantage of having a superior weapon and attacks you. \nYou did not riposte in time and got hurt. You cannot run. \nWhat do you do?!")
                 damage(13)
 
     elif not goblin2:
-        print_s("\n~~~The goblin is just as you left him. Gutted on the floor. The treasure chest is empty. Nothing of interest here aside from the door which you came through. What do you do?")
+        print_d("\n~~~The goblin is just as you left him. Gutted on the floor. The treasure chest is empty. \nNothing of interest here aside from the door which you came through. \nWhat do you do?")
 
         while True:
 
@@ -606,7 +579,7 @@ def goblin2_room():
                 continue
 
             if "door" in action or "back" in action or "return" in action or "leave" in action:
-                print_s("You open the door and slam it behind you.")
+                print_d("You open the door and slam it behind you.")
                 prophecy_room()
 
             else:
@@ -618,8 +591,8 @@ def hench1_room():
     global silverkey
 
     if hench1:
-        print_s("\n~~~You step into the room with confidence only to spot a bald, fat thug facing away from you. You immediately notice a large silver key dangling at his belt.")
-        print_s("There are doors at the north and south, from where you first arrived. You would need to kill the thug first. What do you do?")
+        print_d("\n~~~You step into the room with confidence only to spot a bald, fat thug facing away from you. \nYou immediately notice a large silver key dangling at his belt.")
+        print_d("There are doors at the north and south, from where you first arrived. You would need to kill the thug first. \nWhat do you do?")
 
         while True:
 
@@ -634,29 +607,29 @@ def hench1_room():
                 continue
 
             elif "attack" in action or "kill" in action or "fight" in action or "stab" in action:
-                print_s("You tactically attack the thug. Several blows occur. You fight well but are hurt.")
+                print_d("You tactically attack the thug. Several blows occur. You fight well but are hurt.")
                 print_s(". . .")
                 time.sleep(2)
                 damage(23)
-                print_s("\nYou kill the thug.")
+                print_d("\nYou kill the thug.")
                 hench1 = False
                 time.sleep(1)
-                print_s("You bend over the thug's dead body. A stench of garlic makes you gag. You pick up the key and quickly stand up.")
+                print_d("You bend over the thug's dead body. A stench of garlic makes you gag. \nYou pick up the key and quickly stand up.")
 
                 time.sleep(1)
-                print_s("\nYou now have the silver key! You think what wonders it may unlock.\n")
+                print_d("\nYou now have the silver key! You think what wonders it may unlock.\n")
                 time.sleep(1)
                 silverkey = True
                 hench1_room()
 
             else:
-                print_s("The thug uses his broad fists to double punch you right in the face. You fail to riposte. What do you do?!")
+                print_d("The thug uses his broad fists to double punch you right in the face. You fail to riposte. \nWhat do you do?!")
                 damage(18)
 
 
     elif not hench1:
-        print_s("\n~~~The room absolutely reeks of garlic. You wonder how someone can smell of garlic so bad as you step over the thug's dead body. There are doors at the north and south, from where you first arrived. The northern door appears to have frost all around it and you hear a dangerous hum from it.")
-        print_s("What do you do?")
+        print_d("\n~~~The room absolutely reeks of garlic. You wonder how someone can smell of garlic so bad as you \nstep over the thug's dead body. There are doors at the north and south, from where you first arrived. \nThe northern door appears to have frost all around it and you hear a dangerous hum from it.")
+        print_d("What do you do?")
         while True:
 
             action = raw_input("\n> ")
@@ -670,11 +643,11 @@ def hench1_room():
                 continue
 
             if "south" in action or "southern" in action:
-                print_s("You step into the room with the prophecy inscription.")
+                print_d("You step into the room with the prophecy inscription.")
                 prophecy_room()
 
             elif "north" in action or "northern" in action or "frozen" in action:
-                print_s("You approach the frozen door. You get very cold but still push it. You notice it doesn't open easily so you kick it open. You step into a large chamber.")
+                print_d("You approach the frozen door. You get very cold but still push it. \nYou notice it doesn't open easily so you kick it open. You step into a large chamber.")
                 time.sleep(1)
                 frost_lich_room()
 
@@ -685,18 +658,18 @@ def frost_ward_room():
 
     global frost_ward
 
-    print_s("\n~~~You are in awe of the blue magic floating around in this room. It's cold but somehow you don't feel it. In the middle, on a pedestal a magical scroll is floating. There is writing on the pedestal saying \"Those who touch it will be offered protection against frost magic\"")
+    print_d("\n~~~You are in awe of the blue magic floating around in this room. It's cold but somehow you don't feel it. \nIn the middle, on a pedestal a magical scroll is floating. There is writing on the pedestal saying \n\"Those who touch it will be offered protection against frost magic\"")
     time.sleep(3)
     print_s(". . .")
-    print_s("You touch the scroll but your feet freeze completely and you cannot move. The frost is slowly moving up your body.")
+    print_d("You touch the scroll but your feet freeze completely and you cannot move. \nThe frost is slowly moving up your body.")
     time.sleep(2)
-    print_s("You observe runes on the scroll start forming into numbers.")
+    print_d("You observe runes on the scroll start forming into numbers.")
     print_s("Solve the puzzle to survive.\n")
-    print_s("========================================================")
+    print_d("========================================================")
     print_s("23 8 1 20 . 9 19 . 20 8 5 . 8 9 7 8 5 19 20 . ")
     print_s("13 15 21 14 20 1 9 14 . 9 14 . 20 8 5 . 23 15 18 12 4 ?")
-    print_s("========================================================\n")
-    print_s("What is the answer to this riddle?")
+    print_d("========================================================\n")
+    print_d("What is the answer to this riddle?")
 
     while True:
 
@@ -713,17 +686,17 @@ def frost_ward_room():
         if "everest" in action or "Everest" in action:
 
             time.sleep(1)
-            print_s("You shout in pain: EVEREST!. The icy shackles holding you in place suddenly break and you feel a warmth filling you.")
+            print_d("You shout in pain: EVEREST!. The icy shackles holding you in place suddenly break \nand you feel a warmth filling you.")
             time.sleep(2)
-            print_s("You are warded against all frost magic!")
+            print_d("You are warded against all frost magic!")
             time.sleep(1)
             frost_ward = True
-            print_s("You faint and after a few minutes wake up outside of the room.")
+            print_d("You faint and after a few minutes wake up outside of the room.")
             time.sleep(2)
             prophecy_room()
 
         else:
-            print_s("The frost climbs up on your body even higher. It hurts. You must solve this puzzle quickly!")
+            print_d("The frost climbs up on your body even higher. It hurts. \nYou must solve this puzzle quickly!")
             damage(15)
 
 def frost_lich_room():
@@ -733,15 +706,15 @@ def frost_lich_room():
 
 
     if frost_lich:
-        print_s("\n~~~This room is large and quite tall. You feel the blood freezing in your veins as you look up. Above you floats a powerful being radiating with blue light.")
+        print_d("\n~~~This room is large and quite tall. You feel the blood freezing in your veins as you look up. \nAbove you floats a powerful being radiating with blue light.")
         time.sleep(2.5)
-        print_s("It is wearing a beautiful black robe embroidered with blue markings. A skull for a head with blue fire seeping from its mouth and eyes. It is the much feared frost lich in all its might.")
+        print_d("It is wearing a beautiful black robe embroidered with blue markings. A skull for a head with blue \nfire seeping from its mouth and eyes. It is the much feared frost lich in all its might.")
         time.sleep(2.5)
-        print_s("The frost lich turns at you and freezes all the doors of the room. You cannot escape.")
-        print_s("The lich says in a slithering, echoing voice:")
+        print_d("The frost lich turns at you and freezes all the doors of the room. You cannot escape.")
+        print_d("The lich says in a slithering, echoing voice:")
         time.sleep(1)
-        print_s("\"Ah! Another challenger. Let's see if you are worthy, %s!\"" % name)
-        print_s("What do you do?")
+        print_d("\"Ah! Another challenger. Let's see if you are worthy, %s!\"" % name)
+        print_d("What do you do?")
 
         while True:
 
@@ -753,25 +726,25 @@ def frost_lich_room():
                 continue
 
             if frost_ward and condition:
-                print_s("You can feel your arms from shoulder to fist, swelling with a visible blue energy. You feel powerful.")
+                print_d("You can feel your arms from shoulder to fist, swelling with a visible blue energy. \nYou feel powerful.")
                 time.sleep(1)
-                print_s("You and the lich fight almost as equals. Your attacks rip through the lich's essence damaging him tremendously.")
+                print_d("You and the lich fight almost as equals. Your attacks rip through the lich's essence \ndamaging him tremendously.")
                 print_s(". . .")
                 time.sleep(2)
-                print_s("The lich's attacks are powerful and you are hurt.")
+                print_d("The lich's attacks are powerful and you are hurt.")
                 print_s(". . .")
                 time.sleep(2)
                 damage(23)
-                print_s("\nYou destroy the frost lich.\n")
+                print_d("\nYou destroy the frost lich.\n")
                 frost_lich = False
                 time.sleep(1)
-                print_s("The lich appears to vanish from existence. Its skull hits the ground and cracks. The ice on the doors melts completely.")
+                print_d("The lich appears to vanish from existence. Its skull hits the ground and cracks. \nThe ice on the doors melts completely.")
                 frost_lich_room()
                 time.sleep(1)
 
             elif not frost_ward and condition:
-                print_s("You try to hit the lich but your attacks pass right through him.")
-                print_s("The lich laughs at you: \"PAH! You fool. You have no protection. You shall DIE!\"")
+                print_d("You try to hit the lich but your attacks pass right through him.")
+                print_d("The lich laughs at you: \"PAH! You fool. You have no protection. \nYou shall DIE!\"")
                 print_s(". . .")
                 time.sleep(2)
                 damage(130)
@@ -784,12 +757,12 @@ def frost_lich_room():
 
     elif not frost_lich:
 
-        print_s("\n~~~A large room formerly inhabited by the frost lich. There are doors to north, south, west and east.")
-        print_s("The northern door says \"BEWARE\".")
-        print_s("There is a smell of garlic seeping from under the southern door.")
-        print_s("The eastern door has a golden lock on it.")
-        print_s("The western door is plain and made out of wood.")
-        print_s("What do you do?")
+        print_d("\n~~~A large room formerly inhabited by the frost lich. \nThere are doors to north, south, west and east.")
+        print_d("The northern door says \"BEWARE\".")
+        print_d("There is a smell of garlic seeping from under the southern door.")
+        print_d("The eastern door has a golden lock on it.")
+        print_d("The western door is plain and made out of wood.")
+        print_d("What do you do?")
 
         while True:
 
@@ -806,24 +779,24 @@ def frost_lich_room():
             if "east" in action or "eastern" in action or "lock" in action or "golden" in action or "gold" in action:
 
                 if not goldenkey:
-                    print_s("The door has a large golden lock. You need a key to open this door.")
+                    print_d("The door has a large golden lock. You need a key to open this door.")
                     continue
 
                 elif goldenkey:
-                    print_s("You pull the key out of your pouch and excitedly turn the lock open. The golden lock clicks and clacks and opens. You step into the room.")
+                    print_d("You pull the key out of your pouch and excitedly turn the lock open. \nThe golden lock clicks and clacks and opens. \nYou step into the room.")
                     time.sleep(1)
                     armour_room()
 
             elif "north" in action or "northern" in action:
-                print_s("You step into the next chamber.")
+                print_d("You step into the next chamber.")
                 encounter_room1()
 
             elif "south" in action or "southern" in action or "garlic" in action:
-                print_s("You gag from the smell of garlic.")
+                print_d("You gag from the smell of garlic.")
                 hench1_room()
 
             elif "west" in action or "western" in action or "plain" in action or "wood" in action or "wooden" in action:
-                print_s("You turn the handle of the wooden door and it opens.")
+                print_d("You turn the handle of the wooden door and it opens.")
                 keyroom()
 
             else:
@@ -835,8 +808,8 @@ def keyroom():
 
     if not goldenkey:
 
-        print_s("\n~~~The room has no other doors, windows or anything special. There is only a square shaped iron box on the floor. You look at the box and realise it's a number riddle.")
-        print_s("Do you try to solve it?")
+        print_d("\n~~~The room has no other doors, windows or anything special. There is only a square shaped iron box on the floor. \nYou look at the box and realise it's a number riddle.")
+        print_d("Do you try to solve it?")
 
         while True:
 
@@ -850,7 +823,7 @@ def keyroom():
                 puzzle()
 
             elif "no" in action or "No" in action or "leave" in action or "back" in action:
-                print_s("You don't feel smart today. You leave the room.")
+                print_d("You don't feel smart today. You leave the room.")
                 frost_lich_room()
 
             else:
@@ -858,7 +831,7 @@ def keyroom():
 
     if goldenkey:
 
-        print_s("\n~~~There are only small iron shards on the floor. The room is empty. You have the golden key. What do you do?")
+        print_d("\n~~~There are only small iron shards on the floor. The room is empty. You have the golden key. \nWhat do you do?")
 
         while True:
 
@@ -873,7 +846,7 @@ def keyroom():
                 continue
 
             if "door" in action or "back" in action or "return" in action or "leave" in action:
-                print_s("You open the door and slam it behind you.")
+                print_d("You open the door and slam it behind you.")
                 frost_lich_room()
 
             else:
@@ -885,7 +858,7 @@ def armour_room():
     global potion
 
     if armour:
-        print_s("\n~~~The room is beautiful and looks comfortable. You are happy with what you found in the chest. You can only turn back. What do you do?")
+        print_d("\n~~~The room is beautiful and looks comfortable. You are happy with what you found in the chest. \nYou can only turn back. \nWhat do you do?")
 
         while True:
 
@@ -900,11 +873,11 @@ def armour_room():
                 continue
 
             if "treasure" in action or "chest" in action:
-                print_s("You have already emptied the contents of the chest.")
+                print_d("You have already emptied the contents of the chest.")
                 continue
 
             if "back" in action or "leave" in action or "return" in action or "run" in action:
-                print_s("You step out of the room.")
+                print_d("You step out of the room.")
                 frost_lich_room()
 
             else:
@@ -912,8 +885,8 @@ def armour_room():
 
     elif not armour:
 
-        print_s("\n~~~You step into this room and feel calm. It is very clean and beautiful. Well-lit and decorated with all sorts of paintings. There is also a comfortable cushioned chair and a table. On the table there is a treasure chest.")
-        print_s("What do you do?")
+        print_d("\n~~~You step into this room and feel calm. It is very clean and beautiful. \nWell-lit and decorated with all sorts of paintings. There is also a comfortable cushioned chair and a table. \nOn the table there is a treasure chest.")
+        print_d("What do you do?")
 
 
         while True:
@@ -925,17 +898,17 @@ def armour_room():
                 continue
 
             if "open" in action or "treasure" in action or "take" in action or "chest" in action:
-                print_s("The treasure chest opens easily. Inside there is a engraved chestplate and a red health potion. You take the potion and you put the chestplate on you. It fits as if made for you.")
+                print_d("The treasure chest opens easily. Inside there is a engraved chestplate and a red health potion. \nYou take the potion and you put the chestplate on you. It fits as if made for you.")
                 time.sleep(2)
-                print_s("\nYou now have a drinkable health potion!\n")
+                print_d("\nYou now have a drinkable health potion!\n")
                 time.sleep(1)
-                print_s("\nYou are now wearing armour and will take less damage in combat!\n")
+                print_d("\nYou are now wearing armour and will take less damage in combat!\n")
                 potion = True
                 armour = True
                 armour_room()
 
             elif "back" in action or "leave" in action or "return" in action or "run" in action:
-                print_s("You leave the treasure chest where it is and step out of the room.")
+                print_d("You leave the treasure chest where it is and step out of the room.")
                 frost_lich_room()
 
             else:
@@ -943,8 +916,8 @@ def armour_room():
 
 def encounter_room1():
 
-    print_s("\n~~~You are surprised by the silence of this room. You stop to listen...")
-    print_s("You hear a faint noise...")
+    print_d("\n~~~You are surprised by the silence of this room. You stop to listen...")
+    print_d("You hear a faint noise...")
     time.sleep(2)
     randenc()
 
@@ -958,11 +931,11 @@ def encounter_room1():
             continue
 
         if "north" in action or "northern" in action:
-            print_s("You approach the northern door. You hear noises from the other side.")
+            print_d("You approach the northern door. You hear noises from the other side.")
             encounter_room2()
 
         elif "south" in action or "southern" in action:
-            print_s("You go through the southern door where the lich was.")
+            print_d("You go through the southern door where the lich was.")
             frost_lich_room()
 
         elif "potion" in action:
@@ -974,8 +947,8 @@ def encounter_room1():
 
 def encounter_room2():
 
-        print_s("\n~~~You are hopeful this room does not have any surprises in store for you.")
-        print_s("You hear a loud wheezing noise...")
+        print_d("\n~~~You are hopeful this room does not have any surprises in store for you.")
+        print_d("You hear a loud wheezing noise...")
         time.sleep(2)
         randenc()
 
@@ -989,11 +962,11 @@ def encounter_room2():
                 continue
 
             if "north" in action or "northern" in action:
-                print_s("You approach the northern door and open it bravely.")
+                print_d("You approach the northern door and open it bravely.")
                 beware_room()
 
             elif "south" in action or "southern" in action:
-                print_s("You go back through the southern door even though you feel an overwhelming sense of dread.")
+                print_d("You go back through the southern door even though you feel an overwhelming sense of dread.")
                 encounter_room1()
 
             elif "potion" in action:
@@ -1005,7 +978,7 @@ def encounter_room2():
 
 def beware_room():
 
-    print_s("\n~~~The walls of this room are made of bright white stone. You also see a large readable plaque on the floor. There are now doors to north, south and west. The northern door is made of steel that is so hot it turned red and is smoldering. The western door has a flaming shield symbol on it.  \nWhat do you do?")
+    print_d("\n~~~The walls of this room are made of bright white stone. \nYou also see a large readable plaque on the floor. \nThere are now doors to north, south and west. The northern door is made of steel that is so hot it turned red and is smoldering. \nThe western door has a flaming shield symbol on it.  \nWhat do you do?")
 
     while True:
 
@@ -1020,28 +993,28 @@ def beware_room():
             continue
 
         if "inscription" in action or "read" in action or "plaque" in action:
-            print_s("You kneel and get a closer look. The inscription reads in capital letters:")
-            print_s("*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*")
-            print_s(""" YOU HAVE ALMOST REACHED THE END OF THE DUNGEON. THE FINAL TEST LIES AHEAD OF YOU.  """)
-            print_s("*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*")
+            print_d("You kneel and get a closer look. The inscription reads in capital letters:")
+            print_d("*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*")
+            print_d(""" YOU HAVE ALMOST REACHED THE END OF THE DUNGEON. THE FINAL TEST LIES AHEAD OF YOU.  """)
+            print_d("*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*-*_*")
             time.sleep(3)
-            print_s("\nYou stand back up. You are afraid of what is behind the northern door.\n")
+            print_d("\nYou stand back up. You are afraid of what is behind the northern door.\n")
             time.sleep(3)
-            print_s("You regain your courage. Which door do you try?")
+            print_d("You regain your courage. Which door do you try?")
             continue
 
         elif "north" in action or "northern" in action or "smoldering" in action or "wooden" in action:
-            print_s("You gather a piece of cloth and push the smoldering steel door open with it.")
+            print_d("You gather a piece of cloth and push the smoldering steel door open with it.")
             time.sleep(1)
             fire_lich_room()
 
         elif "west" in action or "western" in action or "flaming" in action or "shield" in action or "symbol" in action:
-            print_s("You push the door the western door that has a flaming shield on it and step in the room.")
+            print_d("You push the door the western door that has a flaming shield on it and step in the room.")
             time.sleep(1)
             fire_ward_room()
 
         elif "south" in action or "southern" in action:
-            print_s ("You start thinking going back is a bad idea.")
+            print_d("You start thinking going back is a bad idea.")
             time.sleep(1)
             encounter_room1()
 
@@ -1055,14 +1028,14 @@ def fire_ward_room():
 
     if not fire_ward:
 
-        print_s("This room is also built with white stones. In the middle you see a pedestal with a floating scroll on it that is on fire. You feel very hot all of a sudden.")
-        print_s("You know what this is. It's the fire ward scroll, and it looks similar to the frost ward scroll you saw earlier.")
+        print_d("This room is also built with white stones. \nIn the middle you see a pedestal with a floating scroll on it that is on fire. \nYou feel very hot all of a sudden.")
+        print_d("You know what this is. It's the fire ward scroll, and\n it looks similar to the frost ward scroll you saw earlier.")
         time.sleep(2)
-        print_s("You approach the scroll expecting the worst.")
+        print_d("You approach the scroll expecting the worst.")
         time.sleep(2)
-        print_s("The scroll reads: \"Only the blood of the worthy will gain our protection. All we ask for is five drops of blood.\"")
+        print_d("The scroll reads: \"Only the blood of the worthy will gain our protection. \nAll we ask for is five drops of blood.\"")
         time.sleep(1)
-        print_s("What do you do?")
+        print_d("What do you do?")
 
         while True:
 
@@ -1077,7 +1050,7 @@ def fire_ward_room():
                 continue
 
             elif "yes" in action or "Yes" in action or "fire" in action or "ward" in action or "take" in action or "give" in action or "blood" in action:
-                print_s("You cut your palm and let five large drops of blood drip on the scroll.")
+                print_d("You cut your palm and let five large drops of blood drip on the scroll.")
                 fire_ward = True
 
                 hp -= 5
@@ -1088,12 +1061,12 @@ def fire_ward_room():
                 if hp <= 0:
                     death()
 
-                print_s("You are now warded against fire magic!\n")
+                print_d("You are now warded against fire magic!\n")
                 time.sleep(1)
                 fire_ward_room()
 
             elif "no" in action or "No" in action or "return" in action or "leave" in action or "back" in action:
-                print_s("You are reluctant to give your blood and step out of the room.")
+                print_d("You are reluctant to give your blood and step out of the room.")
                 beware_room()
 
             else:
@@ -1101,7 +1074,7 @@ def fire_ward_room():
 
     if fire_ward:
 
-        print_s("The fire ward scroll is now a pile of ashes on the pedestal. There is nothing of interest in this room. What do you do?")
+        print_d("The fire ward scroll is now a pile of ashes on the pedestal. There is nothing of interest in this room. \nWhat do you do?")
 
         while True:
 
@@ -1116,7 +1089,7 @@ def fire_ward_room():
                 continue
 
             if "door" in action or "back" in action or "return" in action or "leave" in action:
-                print_s("You open the door and slam it behind you.")
+                print_d("You open the door and slam it behind you.")
                 beware_room()
 
             else:
@@ -1129,16 +1102,16 @@ def fire_lich_room():
 
 
 
-    print_s("\n~~~As you enter you instantly feel a burning gaze upon you. You feel extreme heat in the room and cannot breathe. In front of you is the fire lich. A burning skull of death donning beautiful robes of red and white.")
+    print_d("\n~~~As you enter you instantly feel a burning gaze upon you. You feel extreme heat in the room and cannot breathe. \nIn front of you is the fire lich. A burning skull of death donning beautiful robes of red and white.")
     time.sleep(2.5)
-    print_s("The fire lich casts a spell and creates an arena of fire around you and himself. You cannot escape.")
-    print_s("The lich, spewing flames from his eyes and mouth screams:")
+    print_d("The fire lich casts a spell and creates an arena of fire around you and himself. Y\nou cannot escape.")
+    print_d("The lich, spewing flames from his eyes and mouth screams:")
     time.sleep(1)
-    print_s("\"You have reached the end, %s!\"" % name)
+    print_d("\"You have reached the end, %s!\"" % name)
     time.sleep(1)
-    print_s("\"....and by end I mean YOUR END! BWHA HA HA HA!\"")
+    print_d("\"....and by end I mean YOUR END! BWHA HA HA HA!\"")
     time.sleep(1)
-    print_s("You are scared out of your mind. What do you do?")
+    print_d("You are scared out of your mind. What do you do?")
 
     while True:
 
@@ -1154,28 +1127,28 @@ def fire_lich_room():
             continue
 
         if fire_ward and condition:
-            print_s("You become a human torch. You are now blazing with fire and you feel powerful.")
+            print_d("You become a human torch. You are now blazing with fire and you feel powerful.")
             time.sleep(1)
-            print_s("You and the lich fight almost as equals. Your attacks rip through the lich's essence damaging him tremendously.")
+            print_d("You and the lich fight almost as equals. \nYour attacks rip through the lich's essence damaging him tremendously.")
             print_s(". . .")
             time.sleep(2)
-            print_s("The lich's attacks are powerful and you are hurt.")
+            print_d("The lich's attacks are powerful and you are hurt.")
             print_s(". . .")
             time.sleep(2)
             damage(20)
-            print_s("\nYou destroy the fire lich.\n")
+            print_d("\nYou destroy the fire lich.\n")
             fire_lich = False
             time.sleep(1)
-            print_s("The lich screams as his body begins to disintegrate and then explode with a powerful bang. The room falls silent again.\n")
+            print_d("The lich screams as his body begins to disintegrate and then explode with a powerful bang. \nThe room falls silent again.\n")
             time.sleep(1)
-            print_s("A door opens, you can see the sunlight...peace.\n")
+            print_d("A door opens, you can see the sunlight...peace.\n")
             time.sleep(2)
             end()
 
 
         elif not fire_ward and condition:
-            print_s("You try to hit the lich but your attacks cause painful burns on your skin.")
-            print_s("The lich laughs at you: \"PAH! You fool. You dare come here like other hundreds unprepared? You shall DIE!\"")
+            print_d("You try to hit the lich but your attacks cause painful burns on your skin.")
+            print_d("The lich laughs at you: \"PAH! You fool. You dare come here like other hundreds unprepared? \nYou shall DIE!\"")
             print_s(". . .")
             time.sleep(2)
             damage(150)
@@ -1194,41 +1167,11 @@ def end():
  \        /|   /    |    \/    |    \|        \ |    |   \\
   \__/\  / |___\____|__  /\____|__  /_______  / |____|_  /
        \/              \/         \/        \/         \/ """)
-    print_s("====================================================")
-    print_s("Stockades is a text adventure game by Andrew Vatavu.")
-    print_s("====================================================")
+    print_d("====================================================")
+    print_d("Stockades is a text adventure game by Andrew Vatavu and Anthony Mattice.")
+    print_d("====================================================")
     raw_input("Press Enter to quit.")
     exit(0)
 
 
-########### ROOMS ############
-
-#def template():
-     #delete this after eerything
-
-    #action = raw_input("> ")
-
-    #if action == "stats":ki
-        #stats()
-        # vezi daca trebuie definit stats ca fiind global
-    #else:
-        #print "ceau"
-
-#15 dmg
-
 start()
-
-
-
-#potion_drink()
-#frost_ward = True
-#silverkey = True
-#frost_ward = True
-
-#frost_lich_room()
-#prophecy_room()
-#goblin2_room()
-#torch = True
-#goblin1_room()
-#goblin1 = False
-#prophecy_room()
